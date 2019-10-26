@@ -19,7 +19,7 @@ const HomeScreen = (props) => {
       <TouchableOpacity onPress={() => props.navigation.push('login')}>
         <Text>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.push('register')}>
         <Text>Register</Text>
       </TouchableOpacity>
     </View>

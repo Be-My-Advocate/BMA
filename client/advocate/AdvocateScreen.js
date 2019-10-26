@@ -1,5 +1,6 @@
 import React from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
+import {genericData} from '../genericUserData'
 
 const styles = StyleSheet.create({
   // container: {
@@ -11,7 +12,10 @@ const styles = StyleSheet.create({
 });
 
 const AdvocateScreen = () => {
-  return <View><Text>Advocate Portal</Text></View>
+  return <View>
+    <Text>Advocate Portal</Text>
+    <Text>Welcome, {genericData.advocateObject.fname}</Text>
+  </View>
 }
 
 export default AdvocateScreen

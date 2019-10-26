@@ -20,10 +20,10 @@ const LoginScreen = (props) => {
 
   const loginPatientOrAdvocate = () => {
     // getUserData(username, password).then()
-    if (username === 'patient' || password === 'patient') {
+    if (username === 'patient' || username === 'Patient' || password === 'patient') {
       props.navigation.push('patient')
     }
-    if (username === 'advocate' || password === 'advocate') {
+    if (username === 'advocate' || username === 'Advocate' || password === 'advocate') {
       props.navigation.push('advocate')
     }
     else {setError(true)}

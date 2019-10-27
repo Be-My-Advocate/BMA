@@ -5,19 +5,25 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from './HomeScreen'
 import LoginScreen from './login/LoginScreen'
 import RegisterScreen from './login/RegisterScreen'
-import PatientScreen from './patient/PatientScreen'
-import AdvocateScreen from './advocate/AdvocateScreen'
+import AdvocateNavBar from './AdvocateNavBar'
+import PatientNavBar from './PatientNavBar'
 
 const AppNavigator = createStackNavigator(
   {
     screen: HomeScreen,
     login: LoginScreen,
     register: RegisterScreen,
-    patient: PatientScreen,
-    advocate: AdvocateScreen,
+    patient: PatientNavBar,
+    advocate: AdvocateNavBar,
   },
   {
     initialRouteName: 'screen',
+    // headerMode: 'screen'
+    navigationOptions:  {
+      title: 'login',
+      headerLeft: null,
+      gesturesEnabled: false,
+    }
   }
 );
 

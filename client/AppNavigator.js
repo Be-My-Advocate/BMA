@@ -20,7 +20,7 @@ const AppNavigator = createStackNavigator(
     advocate: AdvocateNavBar,
   },
   {
-    initialRouteName: 'screen',
+    initialRouteName: 'patient',
     defaultNavigationOptions: {
           headerStyle: {
             backgroundColor: '#4B0082',

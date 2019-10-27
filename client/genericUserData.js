@@ -57,6 +57,16 @@ const advocateLocationArray = [
   },
 ]
 
+const calendarData = [
+  {date: 'Tuesday, November 5th', data: 'Webinar w/ Jane C. @ 3pm'},
+  {date: 'Friday, November 8th', data: 'Appointment w/ Dr.Joe @ 8am'},
+  {date: 'Wednesday, November 13th', data: 'Women\'s Support Group @ 7pm'},
+  {date: 'Thursday, November 21st', data: 'Learn About Humira @ 5pm'},
+  {date: 'Friday, November 22nd', data: 'Video Chat w/ Kelsey'},
+]
+
+const learnData = ['Women\'s Support', 'About Humira', 'IBD Facts', 'Teen Issues', 'Women 18-35', 'What Now?', 'OMG IBD', 'Crohns', 'Diabetes in Women', 'Pregnancy over 40', 'Anxiety Medication', 'Coping With Depression']
+
 export const genericData = {
-  patientObject, advocateObject, advocateLocationArray, vegasLocation
+  patientObject, advocateObject, advocateLocationArray, vegasLocation, calendarData, learnData
 }

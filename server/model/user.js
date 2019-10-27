@@ -5,18 +5,18 @@ const Users = {}
 Users.findByEmail = (email) => {
   return db.query(
     `
-      SELECT * FROM users
+      SELECT * FROM accounts
       WHERE email = $1
     `,
     [email]
   );
 }
 
-Users.addUser = (email, firstname, lastname, username, password, userrole) => {
+Users.addUser = (email,password, userrole) => {
   return db.oneOrNone(`
-     INSERT INTO users(email, firstname, lastname, username, password, userrole)
-     VALUES ($1,$2,$3,$4,$5,$6)
-  `, [email, firstname, lastname, username, password, userrole])
+     INSERT INTO accounts(email, password, userrole)
+     VALUES ($1,$2,$3)
+  `, [email, password, userrole])
 }
 
 module.exports = Users

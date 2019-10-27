@@ -16,7 +16,7 @@ userController.authenticate = (req, res) => {
 }
 
 userController.addUser = (req, res) => {
-  User.addUser(req.body.email, req.body.firstname, req.body.lastname, req.body.username, req.body.password, req.body.userRole)
+  User.addUser(req.body.email, req.body.password, req.body.userRole)
     .then( () => {
         res.status(200).json({
           message: "Success",

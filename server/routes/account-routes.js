@@ -2,7 +2,7 @@ const express = require('express');
 // Define the router using the express router
 const userRouter = express.Router();
 
-const userController = require('../controllers/user-controller')
+const userController = require('../controllers/account-controller')
 
 userRouter.get('/', userController.authenticate)
 

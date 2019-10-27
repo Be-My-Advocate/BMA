@@ -1,8 +1,8 @@
-const User =  require('../model/user');
+const User =  require('../model/accounts');
 
-const userController = {}
+const accountController = {}
 
-userController.authenticate = (req, res) => {
+accountController.authenticate = (req, res) => {
   User.findByEmail(req.params.email).then((user)=>{
     res.status(200).json({
       message: "Success",
@@ -15,7 +15,7 @@ userController.authenticate = (req, res) => {
   });
 }
 
-userController.addUser = (req, res) => {
+accountController.addUser = (req, res) => {
   User.addUser(req.body.email, req.body.password, req.body.userRole)
     .then( () => {
         res.status(200).json({
@@ -28,4 +28,4 @@ userController.addUser = (req, res) => {
   });
 }
 
-module.exports = userController
+module.exports = accountController

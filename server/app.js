@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // API Routes
-app.use('/api/users', require('./routes/user-routes'));
+app.use('/api/accounts', require('./routes/account-routes'));
 
 app.listen(PORT, () => {
   console.log(`App is up and running. Listening on port ${PORT}`);

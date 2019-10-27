@@ -11,7 +11,7 @@ const AdvocateNavBar = createBottomTabNavigator(
       screen: AdvocateScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <FontAwesomeIcon icon="coffee" color={tintColor}/>
+          <FontAwesomeIcon icon="home" color={tintColor}/>
         )
       }
     },
@@ -23,16 +23,43 @@ const AdvocateNavBar = createBottomTabNavigator(
         )
       }
     },
+    // Login: {
+    //   screen: LoginScreen,
+    //   navigationOptions: {
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <FontAwesomeIcon icon="coffee" color={tintColor}/>
+    //     )
+    //   }
+    // },
+    // Login: {
+    //   screen: LoginScreen,
+    //   navigationOptions: {
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <FontAwesomeIcon icon="coffee" color={tintColor}/>
+    //     )
+    //   }
+    // },
+    // Login: {
+    //   screen: LoginScreen,
+    //   navigationOptions: {
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <FontAwesomeIcon icon="coffee" color={tintColor}/>
+    //     )
+    //   }
+    // },
   },
   {
     initialRouteName: 'Advocate',
     navigationOptions:  {
-      title: 'login',
+      title: 'Advocate',
       headerLeft: null,
       gesturesEnabled: false,
     },
     tabBarOptions: {
-      activeTintColor: '#eb6e3d'
+      inactiveBackgroundColor: '#4B0082',
+      inactiveTintColor: 'white',
+      headerTintColor: '#4B0082',
+      activeTintColor: '#4B0082'
     }
   }
 );

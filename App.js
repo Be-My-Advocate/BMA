@@ -2,15 +2,19 @@ import React from 'react';
 import AppNavigator from './client/AppNavigator'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-import BottomNavBar from './client/AdvocateNavBar'
+import { faCoffee, faMap, faUser, faList, faFilter, faNotesMedical, faUserCircle, faChevronLeft, faHome, faCommentAlt, faListAlt, faAddressBook } from '@fortawesome/free-solid-svg-icons'
+import {StyleSheet} from 'react-native'
 
-library.add(fab, faCheckSquare, faCoffee)
+library.add(fab, faCoffee, faUser, faMap, faList, faFilter, faNotesMedical, faUserCircle, faChevronLeft, faHome, faCommentAlt, faListAlt, faAddressBook )
 
+const styles = StyleSheet.create({
+  // appNav: {
+  //   backgroundColor: 'blue'
+  // }
+});
 
 export default function App() {
   return (
-    //<BottomNavBar/>
     <AppNavigator/>
   );
 }

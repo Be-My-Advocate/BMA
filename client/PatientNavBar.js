@@ -2,9 +2,11 @@ import React from 'react'
 import { createAppContainer } from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import RegisterScreen from './login/RegisterScreen'
-import LoginScreen from './login/LoginScreen'
 import PatientScreen from './patient/PatientScreen'
+import DirectoryScreen from './patient/DirectoryScreen'
+import RecordsScreen from './patient/RecordsScreen'
+import ConnectScreen from './patient/ConnectScreen'
+import LearnScreen from './patient/LearnScreen'
 
 const PatientNavBar = createBottomTabNavigator(
   {
@@ -12,28 +14,60 @@ const PatientNavBar = createBottomTabNavigator(
       screen: PatientScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <FontAwesomeIcon icon="coffee" color={tintColor}/>
+          <FontAwesomeIcon icon="home" color={tintColor}/>
         )
       }
     },
-    Login: {
-      screen: LoginScreen,
+    Directory: {
+      screen: DirectoryScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <FontAwesomeIcon icon="coffee" color={tintColor}/>
+          <FontAwesomeIcon icon="address-book" color={tintColor}/>
+        )
+      }
+    },
+    Records: {
+      screen: RecordsScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <FontAwesomeIcon icon="notes-medical" color={tintColor}/>
+        )
+      }
+    },
+    Connect: {
+      screen: ConnectScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <FontAwesomeIcon icon="comment-alt" color={tintColor}/>
+        )
+      }
+    },
+    Learn: {
+      screen: LearnScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <FontAwesomeIcon icon="list-alt" color={tintColor}/>
         )
       }
     },
   },
   {
+
     initialRouteName: 'Patient',
     navigationOptions:  {
-      title: 'login',
+      title: 'Patient',
       headerLeft: null,
       gesturesEnabled: false,
     },
     tabBarOptions: {
-      activeTintColor: '#eb6e3d'
+      inactiveBackgroundColor: '#4B0082',
+      inactiveTintColor: 'white',
+      headerTintColor: '#4B0082',
+      activeBackgroundColor: 'white',
+      activeTintColor: '#4B0082',
+      style: {
+        backgroundColor: '#4B0082',
+      },
     }
   }
 );

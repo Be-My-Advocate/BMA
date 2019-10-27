@@ -2,7 +2,8 @@ import React from 'react'
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, Dimensions} from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { genericData } from '../genericUserData'
-import MapView from 'react-native-maps';
+import MapView from 'react-native-maps'
+import {Marker} from 'react-native-maps'
 
 
 
@@ -42,6 +43,12 @@ const styles = StyleSheet.create({
 const DirectoryScreen = () => {
   const [mapView, setMapView] = React.useState(false)
   const [searchText, setSearchText] = React.useState('')
+  const [region, setRegion] = React.useState({
+    latitude: genericData.vegasLocation.lat,
+    longitude: genericData.vegasLocation.lng,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  })
   const [data, setData] = React.useState(genericData.advocateLocationArray)
 
   return <View style={styles.flexCol}>
@@ -57,13 +64,23 @@ const DirectoryScreen = () => {
     {mapView
       ? <View style={styles.container}>
           <MapView style={styles.mapStyle}
-             initialRegion={{
-               latitude: genericData.vegasLocation.lat,
-               longitude: genericData.vegasLocation.lng,
-               latitudeDelta: 0.0922,
-               longitudeDelta: 0.0421,
-             }}
-          />
+                   initialRegion={{
+                     latitude: genericData.vegasLocation.lat,
+                     longitude: genericData.vegasLocation.lng,
+                     latitudeDelta: 0.0922,
+                     longitudeDelta: 0.0421}}
+           region={region}
+          >
+            {data.map((user) => {
+              const latlong = {latitude: user.location.lat, longitude:user.location.lng}
+              return (
+                <Marker
+                  coordinate={latlong}
+                  title={`${user.lname}, ${user.fname}`}
+                />
+              )
+            })}
+          </MapView>
         </View>
 
       : <View style={styles.container}>

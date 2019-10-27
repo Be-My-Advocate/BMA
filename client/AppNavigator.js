@@ -7,12 +7,14 @@ import LoginScreen from './login/LoginScreen'
 import RegisterScreen from './login/RegisterScreen'
 import AdvocateNavBar from './AdvocateNavBar'
 import PatientNavBar from './PatientNavBar'
+import PatientRegister from './login/PatientRegisterScreen'
 
 const AppNavigator = createStackNavigator(
   {
     screen: HomeScreen,
     login: LoginScreen,
     register: RegisterScreen,
+    patientRegister:PatientRegister,
     patient: PatientNavBar,
     advocate: AdvocateNavBar,
   },

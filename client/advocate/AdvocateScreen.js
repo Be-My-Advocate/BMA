@@ -1,7 +1,6 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {genericData} from '../genericUserData'
-import BottomNavBar from '../AdvocateNavBar'
 
 
 const styles = StyleSheet.create({
@@ -12,7 +11,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
 
 const AdvocateScreen = () => {
   return <View style={styles.thing}>

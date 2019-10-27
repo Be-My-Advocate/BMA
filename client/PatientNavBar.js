@@ -52,6 +52,7 @@ const PatientNavBar = createBottomTabNavigator(
     },
   },
   {
+
     initialRouteName: 'Patient',
     navigationOptions:  {
       title: 'Patient',
@@ -59,7 +60,14 @@ const PatientNavBar = createBottomTabNavigator(
       gesturesEnabled: false,
     },
     tabBarOptions: {
-      activeTintColor: '#eb6e3d'
+      inactiveBackgroundColor: '#4B0082',
+      inactiveTintColor: 'white',
+      headerTintColor: '#4B0082',
+      activeBackgroundColor: 'white',
+      activeTintColor: '#4B0082',
+      style: {
+        backgroundColor: '#4B0082',
+      },
     }
   }
 );

@@ -56,8 +56,10 @@ const AdvocateNavBar = createBottomTabNavigator(
       gesturesEnabled: false,
     },
     tabBarOptions: {
-      headerColor: '#eb6e3d',
-      activeTintColor: '#eb6e3d'
+      inactiveBackgroundColor: '#4B0082',
+      inactiveTintColor: 'white',
+      headerTintColor: '#4B0082',
+      activeTintColor: '#4B0082'
     }
   }
 );

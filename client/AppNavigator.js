@@ -18,10 +18,14 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'screen',
-    // headerMode: 'screen'
+    defaultNavigationOptions: {
+          headerStyle: {
+            backgroundColor: '#4B0082',
+          },
+    },
     navigationOptions:  {
       title: 'login',
-      headerLeft: null,
+      headerBackTitle: null,
       gesturesEnabled: false,
     }
   }

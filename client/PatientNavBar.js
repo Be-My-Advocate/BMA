@@ -13,10 +13,10 @@ const PatientNavBar = createBottomTabNavigator(
     Patient: {
       screen: PatientScreen,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        tabBarIcon: ({tintColor}) => (
           <FontAwesomeIcon icon="home" color={tintColor}/>
         )
-      }
+      },
     },
     Directory: {
       screen: DirectoryScreen,

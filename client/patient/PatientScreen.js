@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     color: '#5a5b5c'
   },
   textFlex: {
-    padding: 20,
+    padding: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '500',
     color: 'white',
+  },
+  textCenter: {
+    paddingTop: 5,
+    textAlign: 'center'
   }
 });
 
@@ -50,15 +54,26 @@ const PatientScreen = () => {
 
     <View style={styles.textFlex}>
       <FontAwesomeIcon icon={'chevron-left'} size={20} color={'#aaa'}/>
-      <Image source={require('../images/potato.jpeg')}
-             style={styles.image}
-      />
-      <Image source={require('../images/potato.jpeg')}
-             style={styles.image}
-      />
-      <Image source={require('../images/potato.jpeg')}
-             style={styles.image}
-      />
+      <View>
+        <Image source={require('../images/supportgroups.jpg')}
+               style={styles.image}
+        />
+        <Text style={styles.textCenter}>Women Support</Text>
+      </View>
+
+      <View>
+          <Image source={require('../images/womenwebinar.jpg')}
+                 style={styles.image}
+          />
+          <Text style={styles.textCenter}>About Humira</Text>
+      </View>
+
+      <View>
+        <Image source={require('../images/ibd.jpg')}
+               style={styles.image}
+        />
+        <Text style={styles.textCenter}>IBD Facts</Text>
+      </View>
       <FontAwesomeIcon icon={'chevron-right'} size={20} color={'#aaa'}/>
     </View>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, Dimensions} from 'react-native'
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList, Dimensions, Image} from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { genericData } from '../genericUserData'
 import MapView from 'react-native-maps'
@@ -8,6 +8,7 @@ import {Marker} from 'react-native-maps'
 
 
 const styles = StyleSheet.create({
+  image: {width: 100, height: 100, borderColor: 'pink', borderWidth: 1, borderRadius: 50},
   flexRow: {
     height: '6%',
     flexDirection: 'row',
@@ -22,7 +23,13 @@ const styles = StyleSheet.create({
     padding: 5,
     margin: 10,
     alignItems: 'center',
-    justifyContent: 'flex-start'
+    justifyContent: 'space-between',
+    backgroundColor: '#eee',
+    borderRadius: 8,
+    shadowColor: 'black',
+    shadowOffset: {  width: 5,  height: 5,  },
+    shadowRadius: 8,
+    shadowOpacity: .6,
   },
   mapStyle: {
     width: Dimensions.get('window').width,
@@ -47,8 +54,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 32,
     flex: 1,
-
   },
+  spaceBetween: {
+    justifyContent: 'space-between'
+  }
 });
 
 const DirectoryScreen = () => {
@@ -61,6 +70,17 @@ const DirectoryScreen = () => {
     longitudeDelta: 0.0421,
   })
   const [data, setData] = React.useState(genericData.advocateLocationArray)
+
+  const starDisplay = (stars) => {
+    let potato = []
+    for (let i = stars; i > 0; i--) {
+      potato.push(<FontAwesomeIcon icon={'star'}/>)
+    }
+    for (let i= 5-stars; i > 0; i--){
+      potato.push(<FontAwesomeIcon color={'#ddd'} icon={'star'}/>)
+    }
+    return potato
+  }
 
   return <View style={styles.flexCol}>
     <View style={styles.flexRow}>
@@ -96,14 +116,35 @@ const DirectoryScreen = () => {
 
       : <View style={styles.container}>
         {
-          <FlatList data={data} renderItem={({item}) => <View style={styles.flexStart}>
-            <FontAwesomeIcon icon={'user'} color={'#4B0082'} size={30}/>
-            <View style={styles.advocateText}>
-              <Text>{item.fname}</Text>
-              <Text>{item.email}</Text>
-              <Text>{item.role}</Text>
-            </View>
-          </View>} keyExtractor={item => item.email}
+          <FlatList data={data} renderItem={({item}) =>
+            <View style={styles.flexStart}>
+
+
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    {/*<FontAwesomeIcon icon={'user'} color={'#4B0082'} size={30} />*/}
+                    <Image source={item.photo}
+                           style={styles.image}
+                    />
+                    <View style={styles.advocateText}>
+                      <Text>{`${item.fname} ${item.lname}`}</Text>
+                      {item.role === 'advocate'
+                        ? <Text style={{color: '#666'}}>Patient Advocate</Text>
+                        : <Text style={{color: '#666'}}>MD</Text>
+                      }
+                      <Text style={{color: '#666'}}>{item.gender}</Text>
+                    </View>
+                  </View>
+
+                  <View style={styles.advocateText}>
+                    <Text>Las Vegas, NV</Text>
+                    <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>{starDisplay(item.rating).map((item) => {
+                      return item
+                    })}</View>
+                  </View>
+
+
+          </View>
+          } keyExtractor={item => item.email}
           />
 
         }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import {AsyncStorage} from 'react-native';
 
 import HomeScreen from './HomeScreen'
 import LoginScreen from './login/LoginScreen'
@@ -28,6 +29,7 @@ const AppNavigator = createStackNavigator(
     navigationOptions:  {
       title: 'login',
       headerBackTitle: null,
+      headerLeft:null,
       gesturesEnabled: false,
     }
   }

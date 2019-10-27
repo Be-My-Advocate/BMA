@@ -1,5 +1,7 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import React from 'react'
+import {AsyncStorage} from 'react-native';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -44,6 +46,25 @@ const styles = StyleSheet.create({
 });
 
 const HomeScreen = (props) => {
+
+  const _retrieveData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('login');
+      if (value !== null) {
+        if(value==='true'){
+          props.navigation.push('patient')
+        }
+      }
+    } catch (error) {
+      // Error retrieving data
+      console.log('=====================>', error)
+    }
+  };
+
+  React.useEffect(()=>{
+    _retrieveData()
+  },[])
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Be My Advocate</Text>

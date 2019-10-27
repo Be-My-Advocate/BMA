@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import EULA from './EULA'
 import TextBox from '../TextBox'
-import axios from 'axios'
+import {AsyncStorage} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -48,6 +48,7 @@ const RegisterScreen = (props) => {
   const signup = () => {
     if(email !== '' && password !== '' && password2 !== ''){
       if (password === password2){
+        _storeData()
         props.navigation.push('patient')
       }
       else {
@@ -57,6 +58,15 @@ const RegisterScreen = (props) => {
       setError('Please Fill In All Field')
     }
   }
+
+  const _storeData = async () => {
+    try {
+      await AsyncStorage.setItem('login', 'true');
+      console.log('=====================> saving to storage' )
+    } catch (error) {
+      console.log('=====================>', error)
+    }
+  };
 
   return (
     <View style={styles.container}>

@@ -8,10 +8,12 @@ import MapView from 'react-native-maps';
 
 const styles = StyleSheet.create({
   flexRow: {
-    height: '5%',
+    height: '6%',
     flexDirection: 'row',
-    padding: 5,
+    paddingLeft: 3,
+    paddingRight: 1,
     justifyContent: 'space-evenly',
+    backgroundColor: '#4B0082',
     alignItems: 'center',
   },
   flexStart: {
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   container: {
-    height: '95%',
+    height: '94%',
     backgroundColor: '#fff',
   },
   advocateText: {
@@ -36,7 +38,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-end',
   },
-  textBox: { margin: 5, height: 30, flex: 1, borderColor: 'gray', borderWidth: 1 },
+  textBox: {
+    marginRight: 5,
+    backgroundColor:'white',
+    padding: 4,
+    margin: 1,
+    borderRadius: 5,
+    height: 32,
+    flex: 1,
+
+  },
 });
 
 const DirectoryScreen = () => {
@@ -49,8 +60,8 @@ const DirectoryScreen = () => {
       <TextInput style={styles.textBox} onChangeText={(text) => {setSearchText(text)}} value={searchText}/>
       <TouchableOpacity onPress={() =>setMapView(!mapView)}>
         {mapView
-          ? <FontAwesomeIcon icon={'map'} color={'#4B0082'} size={30}/>
-          : <FontAwesomeIcon icon={'list'} color={'#4B0082'} size={30}/>
+          ? <FontAwesomeIcon icon={'map'} color={'white'} size={30}/>
+          : <FontAwesomeIcon icon={'list'} color={'white'} size={30}/>
         }
       </TouchableOpacity>
     </View>

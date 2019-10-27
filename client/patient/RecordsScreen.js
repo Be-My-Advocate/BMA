@@ -6,11 +6,10 @@ const styles = StyleSheet.create({
 
 });
 
-const PatientScreen = () => {
+const RecordsScreen = () => {
   return <View>
-    <Text>Patient Portal {genericData.patientObject.fname}</Text>
-    <Text>Welcome, {genericData.patientObject.fname}</Text>
+    <Text>Records!</Text>
   </View>
 }
 
-export default PatientScreen
+export default RecordsScreen

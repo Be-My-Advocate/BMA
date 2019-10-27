@@ -15,17 +15,13 @@ const styles = StyleSheet.create({
 
 
 const AdvocateScreen = () => {
-  return (
-    <BottomNavBar/>
-  )
+  return <View style={styles.thing}>
+      <View>
+       <Text>Advocate Portal</Text>
+        <Text>Welcome, {genericData.advocateObject.fname}</Text>
+      </View>
 
-  //<View style={styles.thing}>
-      //<View>
-       // <Text>Advocate Portal</Text>
-        //<Text>Welcome, {genericData.advocateObject.fname}</Text>
-      //</View>
-
-    //</View>
+    </View>
 }
 
 

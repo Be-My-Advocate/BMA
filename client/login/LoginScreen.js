@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textBox: { height: 40, margin: 5, width: 200, borderColor: 'gray', borderWidth: 1 },
-  button: {borderColor: 'salmon', backgroundColor: 'pink'},
+  button: {borderColor: 'salmon', borderWidth: 1, backgroundColor: 'pink'},
 });
 
 const LoginScreen = (props) => {
